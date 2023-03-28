@@ -1,0 +1,29 @@
+<!-- <div class="columns mt-2 is-2 is-variable is-gapless" *ngIf="traits.default">
+    <div class="column is-one-fifth is-half-tablet is-centered" *ngFor="let trait of traits.default"> -->
+        <div class="columns is-gapless">
+        <div class="column" *ngFor="let trait of traits.default">
+        <div  class="cardTilt" routerLink="{{trait.rLink}}">
+            <!-- <div class=""> -->
+                <!-- <div class="unhide card-image image is-96x96">
+                     <img [src]="trait.imageUrl" alt="">
+                </div> -->
+                <!-- <div class=" has-text-centered"> -->
+                    <p class="page-heading is-size-6-widescreen"><span>{{trait.name | uppercase}}</span>
+                    </p>
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="columns has-text-centered is-hidden-mobile">
+                <div class="column bar">
+                    <div class="slider rainbow is-inline-block" >
+                        <div class="filterer"></div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="hide has-text-centered" >
+                <p class="subtitle sub-margin">{{trait.description}}</p>
+            </div> -->
+        </div>
+    </div>
+</div>
+    <!-- </div>
+</div> -->

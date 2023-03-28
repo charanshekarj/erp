@@ -1,0 +1,21 @@
+
+<section class="section">
+    <div class="container">
+        <h1 class="title heading has-text-centered is-size-3">Hand krafted just for you.</h1>
+        <div class="columns mt-5 is-8 is-variable" *ngIf="traits.default">
+            <div class="column is-3 is-half-tablet" *ngFor="let trait of traits.default">
+                <div class="card is-clickable">
+                    <div class="card-image image is-5by4">
+                        <img [src]="trait.imageUrl" alt="">
+                    </div>
+                    <div class="card-content has-text-centered">
+                        <p class="title is-size-5">{{trait.name}}</p>
+                    </div>
+                    <footer class="card-footer-item">
+                        <a href="" class="has-text-grey">View</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+    <div class="screen">
+
+        <div class="container has-text-centered">
+            <figure class="image phaseImg is-inline-block">
+                <img src="../../assets/CalMethodPhases.png" alt="eXRP Phases">
+            </figure>
+        </div>
+
+        <div class="columns mt-2 is-8 is-variable" *ngIf="traits.default">
+            <div class="column is-one-fifth is-half-tablet is-centered" *ngFor="let trait of traits.default">
+                <div (mouseover)="hideElement = false" (mouseleave)="hideElement = true" class="card is-clickable has-text-centered" routerLink="{{trait.rLink}}">
+                    <div class="">
+                        <div class="unhide card-image image is-96x96">
+                            <img [src]="trait.imageUrl" alt="">
+                        </div>
+                        <div class="card-content has-text-centered">
+                            <p class="page-heading is-size-6-widescreen">{{trait.name | uppercase}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="columns has-text-centered is-hidden-mobile">
+                        <div class="column bar">
+                            <div class="slider rainbow is-inline-block" >
+                                <div class="filterer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hide has-text-centered" >
+                        <p class="subtitle sub-margin">{{trait.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
