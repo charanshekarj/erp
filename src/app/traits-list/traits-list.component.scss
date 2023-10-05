@@ -1,6 +1,10 @@
 @import url("https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+.is-active {
+  color: #ffffff !important;
+}
+
 .screen {
   margin-bottom: 400px;
 }
@@ -37,7 +41,7 @@
 }
 
 .card:hover .slider {
-  width: 120px;
+  width: 100vh;
   transition: 0.4s ease-out;
 }
 
@@ -74,9 +78,9 @@
     transition: 0.4s ease-out;
     //position: relative;
     //left: 0px;
-    top: 50px;
+    top: 50px !important;
     margin-bottom: 50px;
-    height: 85%;
+    height: 90%;
   }
   
   .card:hover {

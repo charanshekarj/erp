@@ -22,6 +22,12 @@ export class TraitsListComponent implements OnInit {
     console.log(this.traits);
   }
 
+  activeTab: number = 0;
+
+  setActiveTab(tabNumber: number): void {
+    this.activeTab = tabNumber;
+  }
+
   onHover(){
     this.traits.showSub = 'true';
    }
@@ -31,3 +37,4 @@ export class TraitsListComponent implements OnInit {
    }
 
 }
+

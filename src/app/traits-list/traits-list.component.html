@@ -31,4 +31,57 @@
                 </div>
             </div>
         </div>
+
+        <div class="columns is-mobile mt-6">
+            <div class="column is-half is-offset-one-quarter">
+                <article class="panel card is-clickable has-text-centered has-background-grey-light">
+                    <div class="has-background-grey-light" >
+                        <p class="panel-tabs panel-heading has-background-dark">
+                            <a [class.is-active]="activeTab === 0" (click)="setActiveTab(0)" class="has-text-primary">All</a>
+                            <a [class.is-active]="activeTab === 1" (click)="setActiveTab(1)" class="has-text-primary">Tools</a>
+                            <a [class.is-active]="activeTab === 2" (click)="setActiveTab(2)" class="has-text-primary">Repositories</a>
+                            <a [class.is-active]="activeTab === 3" (click)="setActiveTab(3)" class="has-text-primary">Design</a>
+                            <!-- <a *ngIf="activeTab === 1" class="tab-content">Content for Tab 1</a>
+                            <a *ngIf="activeTab === 2" class="tab-content">Content for Tab 2</a>
+                            <a *ngIf="activeTab === 3" class="tab-content">Content for Tab 3</a> -->
+                        </p>
+                       
+                            <div class="panel-block">
+                                <p class="control has-icons-left">
+                                    <input class="input is-primary" type="text" placeholder="Search">
+                                    <span class="icon is-left">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="hide">
+                            <a class="panel-block">
+                            <span class="panel-icon">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            erp-template.pptx
+                            </a>
+                            <a class="panel-block">
+                            <span class="panel-icon">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            erp-methodology.docx
+                            </a>
+                            <a class="panel-block">
+                            <span class="panel-icon">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            minireset.css
+                            </a>
+                            <a class="panel-block">
+                            <span class="panel-icon">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            jgthms.github.io
+                            </a>
+                       </div>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
