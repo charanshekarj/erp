@@ -1,0 +1,39 @@
+<!-- footer.component.html -->
+<footer class="footer">
+  <div class="container">
+    <div class="logo">
+      <img src="../../../assets/calfus-logo.png" alt="Logo" width="120" height="20" />
+      <!-- Uncomment the line below if you have a description -->
+      <p class="description">xERP Management System</p>
+    </div>
+    <div class="groups">
+      <div *ngFor="let group of groups" class="wrapper">
+        <ng-container *ngIf="group.title === 'About Us'; else otherGroup">
+          <a
+            href="https://www.calfus.com/about-calfus"
+            class="link about-us-label"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ group.title }}
+          </a>
+        </ng-container>
+        <ng-template #otherGroup>
+          <p class="title">{{ group.title }}</p>
+        </ng-template>
+        <p *ngFor="let link of group.links" class="link" (click)="preventDefault($event)">
+          {{ link.label }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container after-footer">
+    <p class="dimmed" size="sm">© 2023 Calfus Inc. All rights reserved.</p>
+    <div class="social">
+      <div *ngFor="let icon of socialIcons" class="action-icon" size="lg">
+        <!-- Include your social icons here -->
+        <i class="{{ icon.class }}" [style.font-size]="icon.size"></i>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,83 @@
+/* footer.component.scss */
+
+.footer {
+  padding: 20px 0;
+  background-color: #1314158b; /* Change the background color as needed */
+  border-top: 1px solid #e9ecef; /* Change the border color as needed */
+  // display: block;
+  // flex-wrap: wrap;
+ width: 100%;
+  justify-content:space-around;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  // margin-top: 5rem;
+  margin-bottom: 0rem;
+  position: sticky;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      img {
+        margin-bottom: 20px;
+      }
+
+      .description {
+        color: #efefef;
+      }
+    }
+
+    .groups {
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 20px;
+
+        .link,
+        .title {
+          color: #efefef; /* Change the text color as needed */
+          font-size: 14px; /* Adjust the font size as needed */
+          margin: 3px 0;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .about-us-label {
+          font-weight: 650;
+        }
+      }
+    }
+  }
+
+  .after-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef; /* Change the border color as needed */
+
+    .dimmed {
+      color: #ececec; /* Change the text color as needed */
+      font-size: 12px; /* Adjust the font size as needed */
+    }
+
+    .social {
+      display: flex; // Use flexbox for horizontal alignment
+      align-items: center;
+      .action-icon {
+        margin-right: 10px;
+        color: #ececec;
+        i {
+          /* Add styling for social icons if needed */
+        }
+      }
+    }
+  }
+}
