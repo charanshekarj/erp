@@ -16,6 +16,11 @@ export class TraitsListComponent implements OnInit {
 
   constructor(private productService: ProductService) { }
 
+  public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
+  public ajaxSettings: object = {
+    url: this.hostUrl + 'api/FileManager/FileOperations'
+  };
+
   ngOnInit(): void {
     this.traits=this.productService.getJSON();
     this.len=[1,2,3,4];
@@ -31,7 +36,7 @@ export class TraitsListComponent implements OnInit {
   onHover(){
     this.traits.showSub = 'true';
    }
-   
+
    onLeave(){
     this.traits.showSub = 'true';
    }

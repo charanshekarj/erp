@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FileViewComponent } from './file-view/file-view.component';
+import { FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { FileViewComponent } from './file-view/file-view.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    FileManagerModule
   ],
   providers: [
     ProductService

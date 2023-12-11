@@ -18,23 +18,19 @@ export class FooterComponent {
 
   groups = [
     {
-      title: 'About Us',
+      title: 'Support',
       links: [
         {
-          link: '/features',
-          label: 'Features'
+          link: '/home',
+          label: 'Home'
         },
         {
-          link: '/pricing',
-          label: 'Pricing'
+          link: '/about',
+          label: 'About Us'
         },
         {
           link: '/support',
-          label: 'Support'
-        },
-        {
-          link: '/forum',
-          label: 'Forum'
+          label: 'Contact'
         },
       ]
     }

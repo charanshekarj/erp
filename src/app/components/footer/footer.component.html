@@ -19,7 +19,7 @@
           </a>
         </ng-container>
         <ng-template #otherGroup>
-          <p class="title">{{ group.title }}</p>
+          <p class="title"><b>{{group.title}}</b></p>
         </ng-template>
         <p *ngFor="let link of group.links" class="link" (click)="preventDefault($event)">
           {{ link.label }}

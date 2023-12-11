@@ -5,19 +5,19 @@
 // rgb(51, 47, 17); => new background color temp
 //  hsla(random() * 360, 100%, 50%,.9);
 // hsla(random() * 0, 10%, 50%,.9); => Dark blue smoke
-@mixin dots($count) {
-    $text-shadow: ();
-    @for $i from 0 through $count {
-      $text-shadow: $text-shadow,
-                   (-.5+(random()) * 3) + em
-                   (-.5+(random()) * 3) + em
-                   6px
-                   //hsla(random() * 0, 10%, 50%,0.8)
-                    hsla(170, 51%, 50%, 1);
-    }
-    text-shadow: $text-shadow;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-  }
+// @mixin dots($count) {
+//     $text-shadow: ();
+//     @for $i from 0 through $count {
+//       $text-shadow: $text-shadow,
+//                    (-.5+(random()) * 3) + em
+//                    (-.5+(random()) * 3) + em
+//                    6px
+//                    //hsla(random() * 0, 10%, 50%,0.8)
+//                     hsla(170, 51%, 50%, 1);
+//     }
+//     text-shadow: $text-shadow;
+//     font-family: Roboto, "Helvetica Neue", sans-serif;
+//   }
 
   html {
     overflow: hidden;
@@ -27,54 +27,54 @@
   }
   body { min-height: 100vh; }
 
-  head::before, head::after,
-  body::before, body::after {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 3em;
-    height: 3em;
-    z-index: 0;
-    content: '.';
-    color: hsla(170, 51%, 50%);
-    mix-blend-mode: screen;
-    animation: 44s -27s move infinite ease-in-out alternate;
-  }
+  // head::before, head::after,
+  // body::before, body::after {
+  //   position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   width: 3em;
+  //   height: 3em;
+  //   z-index: 0;
+  //   // content: '.';
+  //   color: hsla(170, 51%, 50%);
+  //   // mix-blend-mode: screen;
+  //   // animation: 44s -27s move infinite ease-in-out alternate;
+  // }
 
 
-  body::before {
-    @include dots(40);
-    animation-duration: 44s;
-    animation-delay: -27s;
-  }
+  // body::before {
+  //   @include dots(40);
+  //   animation-duration: 44s;
+  //   animation-delay: -27s;
+  // }
 
-  body::after {
-    @include dots(40);
-    animation-duration: 43s;
-    animation-delay: -32s;
-  }
+  // body::after {
+  //   @include dots(40);
+  //   animation-duration: 43s;
+  //   animation-delay: -32s;
+  // }
 
-  head::before {
-    @include dots(40);
-    animation-duration: 42s;
-    animation-delay: -23s;
-  }
+  // head::before {
+  //   @include dots(40);
+  //   animation-duration: 42s;
+  //   animation-delay: -23s;
+  // }
 
-  head::after {
-    @include dots(40);
-    animation-duration: 41s;
-    animation-delay: -19s;
-  }
+  // head::after {
+  //   @include dots(40);
+  //   animation-duration: 41s;
+  //   animation-delay: -19s;
+  // }
 
 
-  @keyframes move {
-    from {
-      transform: rotate(0deg) scale(12) translateX(-20px);
-    }
-    to {
-      transform: rotate(360deg) scale(18) translateX(20px);
-    }
-  }
+  // @keyframes move {
+  //   from {
+  //     transform: rotate(0deg) scale(12) translateX(-20px);
+  //   }
+  //   to {
+  //     transform: rotate(360deg) scale(18) translateX(20px);
+  //   }
+  // }
 
   .title {
     color: #ffffff;
