@@ -14,6 +14,11 @@ import { Phase5Component } from './phase5/phase5.component';
 import { PhasesComponent } from './phases/phases.component';
 import { AboutComponent } from './about/about.component';
 import { MethodologyComponent } from './methodology/methodology.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FileViewComponent } from './file-view/file-view.component';
+
 
 @NgModule({
   declarations: [
@@ -26,12 +31,16 @@ import { MethodologyComponent } from './methodology/methodology.component';
     Phase5Component,
     PhasesComponent,
     AboutComponent,
-    MethodologyComponent
+    MethodologyComponent,
+    FooterComponent,
+    HeaderComponent,
+    FileViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule
   ],
   providers: [
     ProductService

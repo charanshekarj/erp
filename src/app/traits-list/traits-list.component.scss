@@ -1,12 +1,18 @@
 @import url("https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+  // Variables
+  $primary-color: #055144;
+  $accent-color: #40C1AC;
+  $text-color: #ffffff;
+  $mobile-breakpoint: 768px;
+
 .is-active {
   color: #ffffff !important;
 }
 
 .screen {
-  margin-bottom: 400px;
+  margin-bottom: 100px;
 }
 
 .filterer{
@@ -37,7 +43,7 @@
   //left: 22%;
   height: 5px;
   width: 85px;
-  
+
 }
 
 .card:hover .slider {
@@ -64,6 +70,18 @@
   text-shadow: 1px 0.5px black;
 }
 
+.card-content {
+  text-align: justify;
+  // height: 100%; // Ensure the content takes the full height of the card
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-desc {
+  margin-top: -1rem;
+}
+
 
 .card {
     z-index: 99;
@@ -81,8 +99,40 @@
     top: 50px !important;
     margin-bottom: 50px;
     height: 90%;
+    @media (max-width: $mobile-breakpoint) {
+      height: auto; // Allow the card height to adjust based on content
+      margin-bottom: 20px;
+
+      .card-content {
+        font-size: 14px; // Adjust font size for mobile screens
+      }
+
+      .subtitle {
+        display: none; // Hide subtitle on mobile screens
+      }
+
+      .slider {
+        display: none; // Hide the slider on mobile
+      }
+
+      .bar {
+        display: none; // Hide the bar on mobile
+      }
+
+      .hide {
+        display: none; // Hide the description on mobile
+      }
+
+      .unhide {
+        display: block; // Show the image on mobile
+      }
+
+      .title {
+        font-size: 20px; // Adjust the title font size on mobile
+      }
+    }
   }
-  
+
   .card:hover {
     box-shadow: -1rem 0 3rem #40C1AC;
     transform: translateY(-20px);
@@ -99,9 +149,34 @@
     .bar {
       margin-bottom: 30%;
     }
-    
+
+    @media (max-width: $mobile-breakpoint) {
+      height: auto; // Allow the card height to adjust based on content
+      margin-bottom: 20px;
+
+      .slider {
+        display: none; // Hide the slider on mobile
+      }
+
+      .bar {
+        display: none; // Hide the bar on mobile
+      }
+
+      .hide {
+        display: none; // Hide the description on mobile
+      }
+
+      .unhide {
+        display: block; // Show the image on mobile
+      }
+
+      .title {
+        font-size: 20px; // Adjust the title font size on mobile
+      }
+    }
+
   }
-  
+
   .card:hover ~ .card {
     //position: relative;
     //left: 50px;
@@ -110,13 +185,13 @@
 
   .title {
     color: #ffffff;
-    font-weight: 350;
+    // font-weight: 350;
     text-shadow: #fff;
     //height: 100%;
     //position: absolute;
     //left: 20px;
     //top: 15px;
-    
+
   }
 
   img {
@@ -132,4 +207,10 @@
   .sub-margin {
     margin-top: -3%;
     margin-bottom: 10px;
+    padding: 0.5rem;
   }
+
+  .panel {
+    position:relative;
+  }
+

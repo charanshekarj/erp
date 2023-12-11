@@ -3,7 +3,7 @@
 .filterer{
     filter: invert(75%) sepia(52%) saturate(4650%) hue-rotate(319deg) brightness(99%) contrast(85%);
   }
-  
+
 .slider {
       //display: inline-block;
       //margin-top: -20%;
@@ -31,7 +31,7 @@
     width: 200px;
     margin-bottom: 17px;
 }
-  
+
 .is-ancestor {
     background-color: rgb(79, 145, 123, 0.5);
 }
@@ -40,7 +40,7 @@
     color: black;
 }
 .subtitle {
-    
+
 }
 
 .content {
@@ -49,4 +49,12 @@
 
 ul {
     //margin-left: -1px;
+}
+
+.has-text-success {
+  color: rgba(11, 119, 11, 0.801);
+}
+
+.tile {
+  z-index: 1000;
 }

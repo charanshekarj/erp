@@ -3,7 +3,7 @@
         "id":0,
         "name":"Design",
         "description":"The purpose of this phase is to create the blueprint, which is detailed documentation of the business processes which  will be implemented by Calfus.",
-        "imageUrl":"../../assets/design-thinking.png",
+        "imageUrl":"../../assets/design.png",
         "rLink":"/phase1",
         "showSub":"false"
     },
@@ -35,7 +35,7 @@
         "id":4,
         "name":"Production",
         "description":"The purpose of this phase is  to  configure the solution accepted during UAT to Prod environment,  migrate master data & open balances & release the system for go live.",
-        "imageUrl":"../../assets/filament.png",
+        "imageUrl":"../../assets/production.png",
         "rLink":"/phase5",
         "showSub":"true"
     }

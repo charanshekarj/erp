@@ -9,6 +9,8 @@ import { Phase4Component } from './phase4/phase4.component';
 import { Phase3Component } from './phase3/phase3.component';
 import { Phase2Component } from './phase2/phase2.component';
 import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FileViewComponent } from './file-view/file-view.component';
 
 const routes: Routes = [
   {
@@ -23,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'phase2',
-    component: AboutComponent,
+    component: Phase2Component,
     pathMatch: 'full'
   },
   {
@@ -44,7 +46,14 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () => import('../app/products/products.module').then(x => x.ProductsModule)
-  }
+  },
+  {
+    path: 'footer',
+    component: FooterComponent,
+    pathMatch: 'full'
+  },
+  { path: 'file-view/:fileName/:folder', component: FileViewComponent },
+  { path: 'file-view/:fileName', component: FileViewComponent },
 ];
 
 @NgModule({

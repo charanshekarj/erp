@@ -1,3 +1,40 @@
+<div class="screen">
+  <div class="columns mt-1 is-variable is-multiline" *ngIf="traits.default">
+    <div class="column is-6-tablet is-one-fifth-desktop" *ngFor="let trait of traits.default">
+      <div (mouseover)="hideElement = false" (mouseleave)="hideElement = true" class="card is-clickable has-text-centered" routerLink="{{trait.rLink}}">
+        <div class="unhide card-image image is-96x96">
+          <img [src]="trait.imageUrl" alt="">
+        </div>
+        <div class="card-content has-text-centered">
+          <p class="page-heading is-size-6-widescreen">{{trait.name | uppercase}}</p>
+          <!-- <p class="hide subtitle sub-margin is-hidden-mobile">{{trait.description}}</p> -->
+        </div>
+        <div class="columns has-text-centered is-hidden-mobile">
+          <div class="column bar">
+              <div class="slider rainbow is-inline-block" >
+                  <div class="filterer"></div>
+              </div>
+          </div>
+        </div>
+        <div class="hide has-text-centered card-desc" >
+          <p class="subtitle sub-margin">{{trait.description}}</p>
+        </div>
+        <!-- <div class="columns has-text-centered is-hidden-mobile">
+          <div class="column bar">
+            <div class="slider rainbow is-inline-block">
+              <div class="filterer"></div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-mobile mt-6">
+    <div class="column is-half is-offset-one-quarter">
+      <article class="panel card is-clickable has-text-centered has-background-grey-light">
+
+<!--
     <div class="screen">
 
         <div class="container has-text-centered">
@@ -6,7 +43,7 @@
             </figure>
         </div>
 
-        <div class="columns mt-2 is-8 is-variable" *ngIf="traits.default">
+        <div class="columns mt-1 is-8 is-variable" *ngIf="traits.default">
             <div class="column is-one-fifth is-half-tablet is-centered" *ngFor="let trait of traits.default">
                 <div (mouseover)="hideElement = false" (mouseleave)="hideElement = true" class="card is-clickable has-text-centered" routerLink="{{trait.rLink}}">
                     <div class="">
@@ -34,10 +71,10 @@
 
         <div class="columns is-mobile mt-6">
             <div class="column is-half is-offset-one-quarter">
-                <article class="panel card is-clickable has-text-centered has-background-grey-light">
+                <article class="panel card is-clickable has-text-centered has-background-grey-light"> -->
                     <div class="has-background-grey-light" >
                         <p class="panel-tabs panel-heading has-background-dark">
-                            <a [class.is-active]="activeTab === 0" (click)="setActiveTab(0)" class="has-text-primary">All</a>
+                            <!-- <a [class.is-active]="activeTab === 0" (click)="setActiveTab(0)" class="has-text-primary">All</a> -->
                             <a [class.is-active]="activeTab === 1" (click)="setActiveTab(1)" class="has-text-primary">Tools</a>
                             <a [class.is-active]="activeTab === 2" (click)="setActiveTab(2)" class="has-text-primary">Repositories</a>
                             <a [class.is-active]="activeTab === 3" (click)="setActiveTab(3)" class="has-text-primary">Design</a>
@@ -45,7 +82,7 @@
                             <a *ngIf="activeTab === 2" class="tab-content">Content for Tab 2</a>
                             <a *ngIf="activeTab === 3" class="tab-content">Content for Tab 3</a> -->
                         </p>
-                       
+
                             <div class="panel-block">
                                 <p class="control has-icons-left">
                                     <input class="input is-primary" type="text" placeholder="Search">
@@ -54,7 +91,7 @@
                                     </span>
                                 </p>
                             </div>
-                            <div class="hide">
+                            <div class="">
                             <a class="panel-block">
                             <span class="panel-icon">
                                 <i class="fas fa-book" aria-hidden="true"></i>

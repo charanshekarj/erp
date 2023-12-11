@@ -1,44 +1,160 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url("https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
-.animate-charcter
-{
-    font-family: 'Lobster', cursive;
-   //text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  //text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
-  display: inline-block;
-      font-size: 27px;
+// Variables
+$primary-color: #055144;
+$accent-color: #40C1AC;
+$text-color: #ffffff;
+
+// Media Queries
+$mobile-breakpoint: 768px;
+
+// Mixins
+@mixin dots($count) {
+  $text-shadow: ();
+  @for $i from 0 through $count {
+    $text-shadow: $text-shadow,
+                 (-.5 + (random()) * 3) + em
+                 (-.5 + (random()) * 3) + em
+                 6px
+                 hsla(170, 51%, 50%, 1);
+  }
+  text-shadow: $text-shadow;
+  font-family: 'Roboto', "Helvetica Neue", sans-serif;
 }
 
-@keyframes textclip {
+// Global Styles
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: auto; // Ensure the page is scrollable
+}
+
+// ... (rest of the styles remain unchanged)
+
+
+// Head and Body Pseudo-elements
+head::before, head::after,
+body::before, body::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  z-index: 0;
+  content: '.';
+  color: hsla(170, 51%, 50%);
+  mix-blend-mode: screen;
+  animation: 44s -27s move infinite ease-in-out alternate;
+}
+
+body::before,
+body::after {
+  @include dots(40);
+  animation-duration: 44s;
+  animation-delay: -27s;
+}
+
+head::before {
+  @include dots(40);
+  animation-duration: 42s;
+  animation-delay: -23s;
+}
+
+head::after {
+  @include dots(40);
+  animation-duration: 41s;
+  animation-delay: -19s;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(12) translateX(-20px);
+  }
   to {
-    background-position: 200% center;
+    transform: rotate(360deg) scale(18) translateX(20px);
   }
 }
 
+// Common Class Styles
 .title {
-  color: white;
+  color: $text-color;
+  font-weight: 350;
 }
 
+// App Component Styles
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+}
+
+// Screen Styles
+.screen {
+  margin-bottom: 100px;
+}
+
+// Filterer Styles
+.filterer {
+  filter: invert(75%) sepia(52%) saturate(4650%) hue-rotate(319deg) brightness(99%) contrast(85%);
+}
+
+// Slider Styles
+.slider {
+  display: none;
+  margin-top: -25%;
+  position: absolute;
+  z-index: 100;
+  width: 0;
+  height: 15%;
+  background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, rgba(217, 147, 0, 1) 65%, rgba(255, 186, 0, 1) 100%);
+  transition: 0.6s ease-out;
+}
+
+// Card Styles
+.card {
+  z-index: 99;
+  background-color: #042d26;
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.4s ease-out;
+  height: 90%;
+
+  &:hover {
+    box-shadow: -0.5rem 0 1rem $accent-color;
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+
+    .slider {
+      display: block;
+    }
+
+    .hide {
+      display: block;
+    }
+
+    .unhide {
+      display: none;
+    }
+
+    .bar {
+      margin-bottom: 30%;
+    }
+  }
+}
+
+// Heading Styles
 .heading {
   color: #E97865;
   font-family: 'Dancing Script', cursive;
@@ -48,8 +164,11 @@
   text-shadow: 1px 0.5px black;
 }
 
+// Page Heading Styles
 .page-heading {
-  color: #a0ff9b;
+  // color: #a0ff9b;
+  // color: #c5fbc1; ICON Color
+  color: #ffffff;
   font-family: 'Rowdies', cursive;
   text-transform: unset;
   font-weight: 500;
@@ -57,16 +176,63 @@
   text-shadow: 1px 0.5px black;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* Tablet styles */
+  .page-heading {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1216px) {
+  /* Desktop styles */
+  .page-heading {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1216px) {
+  /* Widescreen styles */
+  .page-heading {
+    font-size: 36px;
+  }
+}
+
+// App Heading Styles
 .app-heading {
   font-family: 'Aboreto', cursive;
-  color: white;
+  color: $text-color;
   font-weight: 500;
   font-size: 30px;
   text-shadow: 1px 0.5px black;
 }
 
+// Subtitle Styles
 .subtitle {
-  font-size: 14px;
-  color: rgb(255, 255, 255);
-  font-style: italic;
+  font-size: 12px;
+  color: $text-color;
 }
+
+// Panel Styles
+.panel {
+  position: relative;
+
+  .panel-tabs {
+    // Styles for panel tabs
+  }
+
+  .panel-block {
+    // Styles for panel blocks
+  }
+}
+
+// Input Styles
+.input {
+  // Styles for input elements
+}
+
+// Responsive Styles
+@media (max-width: $mobile-breakpoint) {
+  // Add styles specific to mobile devices
+}
+

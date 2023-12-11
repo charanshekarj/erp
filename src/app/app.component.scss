@@ -16,8 +16,9 @@
                     hsla(170, 51%, 50%, 1);
     }
     text-shadow: $text-shadow;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
   }
-  
+
   html {
     overflow: hidden;
     //background: #123;
@@ -25,7 +26,7 @@
     //background: #ffe261;
   }
   body { min-height: 100vh; }
-  
+
   head::before, head::after,
   body::before, body::after {
     position: fixed;
@@ -39,33 +40,33 @@
     mix-blend-mode: screen;
     animation: 44s -27s move infinite ease-in-out alternate;
   }
-  
-  
+
+
   body::before {
     @include dots(40);
     animation-duration: 44s;
     animation-delay: -27s;
   }
-  
+
   body::after {
     @include dots(40);
     animation-duration: 43s;
     animation-delay: -32s;
   }
-  
+
   head::before {
     @include dots(40);
     animation-duration: 42s;
     animation-delay: -23s;
   }
-  
+
   head::after {
     @include dots(40);
     animation-duration: 41s;
     animation-delay: -19s;
   }
-  
-  
+
+
   @keyframes move {
     from {
       transform: rotate(0deg) scale(12) translateX(-20px);
@@ -83,8 +84,20 @@
     //position: absolute;
     //left: 20px;
     //top: 15px;
-    
+
   }
 
+  app-footer{
+    width: 100%;
+    flex-shrink: 0;
+  }
 
-  
+  .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section {
+    flex: 1;
+  }
