@@ -20,7 +20,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FileViewComponent } from './file-view/file-view.component';
 import { FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 // import { LoginComponent } from './login/login.component';
-import { MSAL_INSTANCE, MsalModule, MsalService } from '@azure/msal-angular';
+import { MSAL_INSTANCE, MsalModule, MsalRedirectComponent, MsalService } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 
 
@@ -65,6 +65,6 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     MsalService,
     ProductService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, MsalRedirectComponent]
 })
 export class AppModule { }
