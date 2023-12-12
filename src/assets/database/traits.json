@@ -1,24 +1,24 @@
 [
     {
         "id":0,
-        "name":"Design",
-        "description":"The purpose of this phase is to create the blueprint, which is detailed documentation of the business processes which  will be implemented by Calfus.",
-        "imageUrl":"../../assets/design.png",
+        "name":"Preparation",
+        "description":"The purpose of this, is to provide initial planning and preparation for the project. Every project has its own unique objectives, scope, and priorities.",
+        "imageUrl":"../../assets/preparation.png",
         "rLink":"/phase1",
         "showSub":"false"
     },
     {
-        "id":1,
-        "name":"Construction",
-        "description":"The purpose of this phase is continuous & Iterative configuration build & validation. During this phase,  the custom components will be developed & tested.​",
-        "imageUrl":"../../assets/construction.png",
-        "rLink":"/phase2",
-        "showSub":"false"
+      "id":1,
+      "name":"Design",
+      "description":"The purpose of this phase is to create the blueprint, which is detailed documentation of the business processes which  will be implemented by Calfus.",
+      "imageUrl":"../../assets/design.png",
+      "rLink":"/phase2",
+      "showSub":"false"
     },
     {
         "id":2,
-        "name":"Validation",
-        "description":"Subtitle",
+        "name":"Construction /\nValidation",
+        "description":"The purpose of this phase is continuous & Iterative configuration build & validation. During this phase,  the custom components will be developed & tested.​",
         "imageUrl":"../../assets/validation.png",
         "rLink":"/phase3",
         "showSub":"false"
@@ -26,7 +26,7 @@
     {
         "id":3,
         "name":"Transition",
-        "description":"The purpose of this phase is  to implement business and process requirements based on the business blueprint.",
+        "description":"The purpose of this phase is to implement business and process requirements based on the business blueprint.",
         "imageUrl":"../../assets/transition.png",
         "rLink":"/phase4",
         "showSub":"false"

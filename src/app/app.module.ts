@@ -19,7 +19,19 @@ import { HeaderComponent } from './components/header/header.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FileViewComponent } from './file-view/file-view.component';
 import { FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
+// import { LoginComponent } from './login/login.component';
+import { MSAL_INSTANCE, MsalModule, MsalService } from '@azure/msal-angular';
+import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 
+
+export function MSALInstanceFactory(): IPublicClientApplication {
+  return new PublicClientApplication({
+    auth: {
+      clientId: 'bb6f0e09-81f6-42b6-b8fe-114a64a8df8e',
+      redirectUri: 'http://localhost:4200'
+    }
+  });
+}
 
 @NgModule({
   declarations: [
@@ -42,9 +54,15 @@ import { FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
     AppRoutingModule,
     FormsModule,
     NoopAnimationsModule,
-    FileManagerModule
+    FileManagerModule,
+    MsalModule
   ],
   providers: [
+    {
+      provide: MSAL_INSTANCE,
+      useFactory: MSALInstanceFactory
+    },
+    MsalService,
     ProductService
   ],
   bootstrap: [AppComponent]

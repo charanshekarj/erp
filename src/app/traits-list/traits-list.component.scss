@@ -82,6 +82,10 @@
   margin-top: -1rem;
 }
 
+.subtitle {
+  font-size: 13px;
+}
+
 
 .card {
     z-index: 99;
@@ -98,9 +102,10 @@
     //left: 0px;
     top: 50px !important;
     margin-bottom: 50px;
+    min-height: 12.5rem;
     height: 90%;
     @media (max-width: $mobile-breakpoint) {
-      height: auto; // Allow the card height to adjust based on content
+      //height: auto; // Allow the card height to adjust based on content
       margin-bottom: 20px;
 
       .card-content {

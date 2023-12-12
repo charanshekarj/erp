@@ -2,7 +2,9 @@
 
 <header class="app-header">
   <div class="logo">
-    <img src="../../../assets/calfus-logo.png" alt="Calfus" width="100" height="50" />
+    <a routerLink="">
+      <img src="../../../assets/calfus-logo.png" alt="Calfus" width="100" height="50" />
+    </a>
   </div>
 
   <!-- <h6 class="has-text-centered subtitle mb-0"><img src="../assets/calfus-logo.png" width="100px"  alt=""></h6> -->
@@ -12,7 +14,10 @@
     <h1 class="app-heading has-text-centered"><b><h2 class="has-text-centered is-size-5 is-inline"><b>x</b></h2>ERP Methodology</b></h1>
   </div> -->
 
-  <div class="login">
-    <button class="login-button">Login</button>
+  <div class="login" *ngIf="!isLoggedIn()">
+    <button (click)="login()" class="login-button">Login</button>
+  </div>
+  <div class="login" *ngIf="isLoggedIn()">
+    <button (click)="logout()" class="login-button">Logout</button>
   </div>
 </header>
