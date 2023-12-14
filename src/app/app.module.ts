@@ -22,6 +22,7 @@ import { FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
 // import { LoginComponent } from './login/login.component';
 import { MSAL_INSTANCE, MsalModule, MsalRedirectComponent, MsalService } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
+import { AuthService } from './auth.service';
 
 
 export function MSALInstanceFactory(): IPublicClientApplication {
@@ -55,7 +56,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     FormsModule,
     NoopAnimationsModule,
     FileManagerModule,
-    MsalModule
+    MsalModule,
   ],
   providers: [
     {
@@ -63,7 +64,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
       useFactory: MSALInstanceFactory
     },
     MsalService,
-    ProductService
+    ProductService,
+    AuthService
   ],
   bootstrap: [AppComponent, MsalRedirectComponent]
 })

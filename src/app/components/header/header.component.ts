@@ -1,8 +1,7 @@
 // header.component.ts
 
 import { Component } from '@angular/core';
-import { MsalService } from '@azure/msal-angular';
-import { AuthenticationResult } from '@azure/msal-browser';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,22 +10,18 @@ import { AuthenticationResult } from '@azure/msal-browser';
 })
 export class HeaderComponent {
   // Add any logic or properties if needed
-
-  constructor (private msalService: MsalService) {
+  constructor (private authService: AuthService) {
 
   }
 
   isLoggedIn(): boolean {
-    return this.msalService.instance.getActiveAccount != null;
+    return this.authService.isLoggedIn()
   }
 
   login() {
-    this.msalService.loginPopup().subscribe((response: AuthenticationResult) => {
-      this.msalService.instance.setActiveAccount(response.account);
-    })
+    this.authService.login()
   }
-
   logout() {
-    this.msalService.logout();
+    this.authService.logout()
   }
 }
